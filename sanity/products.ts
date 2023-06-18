@@ -1,30 +1,43 @@
-export const product = {
+import { defineType, defineField } from "sanity"
+
+export const product = defineType({
     name: "product",
     title: "Products",
     type: "document",
 
-    fields: [
+    fields: [defineField(
         {
             name: "title",
             title: "Title",
             type: "string"
-        },
-        {
-            name: "description",
-            title: "Product Description",
-            type: "string"
-        },
-        {
-            name: "image",
-            title: "Product image",
-            type: "array",
-            of: [{
-                name: "img",
-                title: "Image",
-                type: "image"
-            }]
+        }),
+    defineField({
+        name: "description",
+        title: "Product Description",
+        type: "string"
+    }),
+    defineField({
+        name: "price",
+        title: "Product Price",
+        type: "number"
+    }),
 
-        }
+    defineField({
+        name: "image",
+        title: "Product image",
+        type: "image"
+
+    }),
+    defineField({
+        name: "category",
+        title: "Product Category",
+        type: "reference",
+        to: [
+            {
+                type: "category"
+            }
+        ]
+    })
     ]
 
-}
+})

@@ -1,39 +1,38 @@
+
+import { Image as IImage } from "sanity"
 import { client } from "@/lib/sanityClient"
-import imageUrlBuilder from "@sanity/image-url"
-import Image from "next/image"
+import { ProductCart } from "./ProductCart"
 
 interface IProduct {
   _id: string,
   title: string,
   description: string,
-  image: string[]
+  price: string,
+  image: IImage,
+  category: {
+    name: string
+  }
 }
 
 
 const getProducts = async () => {
-  const res = await client.fetch("*[_type=='product']{_id, title, description, image}")
+  const res = await client.fetch(`*[_type=='product']{_id, title, description, price,image, category -> {name}}`)
   return res
 }
 
-const builder = imageUrlBuilder(client)
-function urlFor(source: any) {
-  return builder.image(source)
-}
 
 export default async function Home() {
   const data: IProduct[] = await getProducts()
-  console.log(data);
+  //  console.log(data);
 
   return (
 
     <section>
-      <div>
+      <div className="grid grid-cols-[repeat(3,auto)]  justify-center gap-x-10">
         {data.map((item) => (
           <>
-            <div className="flex flex-col items-center m-5">
-              <h1 className="text-2xl text-yellow-700" key={item._id}>{item.title}</h1>
-              <div className="text-slate-700">{item.description}</div>
-
+            <div key={item._id} className="flex flex-col items-center mt-10 m-5">
+              <ProductCart item={item} />
             </div>
           </>
 
