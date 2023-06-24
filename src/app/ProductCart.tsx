@@ -2,6 +2,8 @@
 import { urlForImage } from "../../sanity/lib/image"
 import Image from "next/image"
 import { FC } from "react"
+import React from 'react'
+
 
 export const ProductCart: FC<{ item: any }> = ({ item }) => {
 

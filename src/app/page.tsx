@@ -1,7 +1,9 @@
-
+import 'tailwindcss/tailwind.css'
 import { Image as IImage } from "sanity"
 import { client } from "@/lib/sanityClient"
 import { ProductCart } from "./ProductCart"
+import Hero from '@/views/Hero'
+import ProductList from '@/views/ProductList'
 
 interface IProduct {
   _id: string,
@@ -28,6 +30,11 @@ export default async function Home() {
   return (
 
     <section>
+      <Hero />
+      <ProductList />
+
+
+
       <div className="grid grid-cols-[repeat(3,auto)]  justify-center gap-x-10">
         {data.map((item) => (
           <>
