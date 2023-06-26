@@ -1,14 +1,12 @@
-import { ProductCards } from "@/components/ProductCards"
 import React from 'react'
+import { ProductCards } from "@/components/ProductCards"
 import { Products } from "@/utils/mock"
 
 
-const ProductList = () => {
-    const slicedProd = Products.slice(0, 4)
-
+const AllProducts = () => {
     return (
         <div className="flex flex-col md:flex-row justify-evenly mt-16">
-            {slicedProd.map((pro) => (
+            {Products.map((pro) => (
 
                 <ProductCards key={pro.id} name={pro.name} price={pro.price} category={pro.category} image={pro.image} />
 
@@ -17,4 +15,4 @@ const ProductList = () => {
     )
 }
 
-export default ProductList
+export default AllProducts
