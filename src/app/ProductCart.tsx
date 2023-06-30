@@ -23,7 +23,6 @@ export const ProductCart: FC<{ item: any }> = ({ item }) => {
         <>
             <Image placeholder='empty' className="max-h-[200px] object-cover object-top" src={urlForImage(item.image).url()} alt="product" width={300} height={200} />
             <h1 className="text-2xl text-yellow-700" >{item.title}</h1>
-
             <h1 className="text-2xl text-yellow-700" >${item.price}</h1>
             <h1 className="text-xl text-yellow-700" >{item.category.name}</h1>
 

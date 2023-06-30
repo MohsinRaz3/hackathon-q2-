@@ -9,9 +9,7 @@ const ProductList = () => {
     return (
         <div className="flex flex-col md:flex-row justify-evenly mt-16">
             {slicedProd.map((pro) => (
-
-                <ProductCards key={pro.id} name={pro.name} price={pro.price} category={pro.category} image={pro.image} />
-
+                <ProductCards id={pro.id} key={pro.id} name={pro.name} price={pro.price} category={pro.category} image={pro.image} />
             ))}
         </div>
     )
