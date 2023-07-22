@@ -2,8 +2,9 @@ import 'tailwindcss/tailwind.css'
 import { Image as IImage } from "sanity"
 import { client } from "@/lib/sanityClient"
 import { ProductCart } from "./ProductCart"
-import Hero from '@/views/Hero'
-import ProductList from '@/views/ProductList'
+import Hero from '@/components/views/Hero'
+import ProductList from '@/components/views/ProductList'
+import Promotions from '@/components/views/Promotions'
 
 interface IProduct {
   _id: string,
@@ -31,6 +32,7 @@ export default async function Home() {
 
     <section>
       <Hero />
+      <Promotions />
       <ProductList />
 
 
@@ -46,6 +48,8 @@ export default async function Home() {
         ))
 
         }</div>
+
+
     </section>
   )
 }

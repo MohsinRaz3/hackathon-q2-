@@ -6,6 +6,7 @@ export const Products: IProduct[] = [
     {
         id: 1,
         name: "abc",
+        tagline: "Dress",
         price: 123,
         category: "female",
         image: P1
@@ -13,6 +14,7 @@ export const Products: IProduct[] = [
     {
         id: 2,
         name: "abcd",
+        tagline: "Dress",
         price: 13,
         category: "male",
         image: kurta
@@ -20,6 +22,7 @@ export const Products: IProduct[] = [
     {
         id: 3,
         name: "abcde",
+        tagline: "Dress",
         price: 23,
         category: "male",
         image: tshirt
@@ -27,6 +30,7 @@ export const Products: IProduct[] = [
     {
         id: 4,
         name: "xyz",
+        tagline: "Dress",
         price: 35,
         category: "kids",
         image: P1
@@ -34,6 +38,7 @@ export const Products: IProduct[] = [
     {
         id: 5,
         name: "bat",
+        tagline: "Dress",
         price: 35,
         category: "sports",
         image: P1
@@ -41,6 +46,7 @@ export const Products: IProduct[] = [
     {
         id: 6,
         name: "abcde",
+        tagline: "Dress",
         price: 23,
         category: "male",
         image: tshirt
@@ -49,12 +55,14 @@ export const Products: IProduct[] = [
         id: 7,
         name: "xyz",
         price: 35,
+        tagline: "Dress",
         category: "kids",
         image: P1
     },
     {
         id: 8,
         name: "bat",
+        tagline: "Dress",
         price: 35,
         category: "sports",
         image: P1
@@ -62,6 +70,7 @@ export const Products: IProduct[] = [
     {
         id: 9,
         name: "abcde",
+        tagline: "Dress",
         price: 23,
         category: "male",
         image: tshirt
@@ -69,6 +78,7 @@ export const Products: IProduct[] = [
     {
         id: 10,
         name: "xyz",
+        tagline: "Dress",
         price: 35,
         category: "kids",
         image: P1
@@ -76,8 +86,11 @@ export const Products: IProduct[] = [
     {
         id: 11,
         name: "bat",
+        tagline: "Dress",
         price: 35,
         category: "sports",
         image: P1
     }
 ]
+
+export const featureImg = ["/Featured1.png", "/Featured2.png", "/Featured3.png", "/Featured4.png"]

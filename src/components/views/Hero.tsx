@@ -4,6 +4,9 @@ import { ShoppingCart } from 'lucide-react'
 import Image from 'next/image'
 import heroImg from "/public/heroimg.webp"
 import React from 'react'
+import { featureImg } from '@/utils/mock'
+
+
 
 const Hero = () => {
     return (
@@ -20,12 +23,21 @@ const Hero = () => {
                     with a problem: the kingdom was running out of money.
                 </p>
                 <Button className='bg-black text-white h-12 px-8 mt-4 '><ShoppingCart className='m-2' /> Start Shopping </Button>
+
+                <div className='flex gap-x-8 mt-6  '>
+                    {
+                        featureImg.map((img) => (<Image key={img} src={img} alt="featured" height={80} width={130} />))
+                    }
+                </div>
+
             </div>
 
             <div className=" flex-1 ">
                 <Image src={heroImg} alt="logo" />
 
             </div>
+
+
         </section>
     )
 }

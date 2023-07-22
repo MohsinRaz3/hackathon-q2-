@@ -7,6 +7,8 @@ const getProductByCategory = (category: string) => {
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
+
+
     const result = getProductByCategory(params.slug)
     return (
         <>

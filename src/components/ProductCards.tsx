@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { StaticImageData } from 'next/image'
 import React from 'react'
 import Link from "next/link"
+import AddToCart from './AddToCart'
 
 
 
@@ -15,6 +16,7 @@ export const ProductCards = (props: { id: number, name: string, price: number, c
                     <h3 className='font-bold text-lg mt-3'>{props.category}</h3>
                     <p className='font-bold text-lg'>${props.price}</p>
                 </Link>
+                <AddToCart />
             </div>
         </div>
     )
