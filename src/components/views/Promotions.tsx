@@ -22,7 +22,7 @@ const Promotions = () => {
                             <h1 className='font-bold text-xl'>GET UP TO 60%</h1>
                             <h3 className='font-semibold text-lg'>For the summer season</h3>
                         </div>
-                        <Image src={"/promotionImg1.webp"} alt="promo" width={200} height={100} className='h-[200px]' />
+                        <Image src={"/promotionImg1.webp"} alt="promo" width={200} height={100} />
                     </div>
                     <div className='h-[200px] bg-[#212121] flex flex-col justify-center items-center'>
                         <h1 className=" text-white scroll-m-20 text-2xl font-bold tracking-tight lg:text-4xl">

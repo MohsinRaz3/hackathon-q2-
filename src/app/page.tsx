@@ -5,6 +5,7 @@ import { ProductCart } from "./ProductCart"
 import Hero from '@/components/views/Hero'
 import ProductList from '@/components/views/ProductList'
 import Promotions from '@/components/views/Promotions'
+import StripePayment from '@/components/views/StripePayment'
 
 interface IProduct {
   _id: string,
@@ -31,8 +32,10 @@ export default async function Home() {
   return (
 
     <section>
+
       <Hero />
       <Promotions />
+      <StripePayment />
       <ProductList />
 
 
