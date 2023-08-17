@@ -40,8 +40,8 @@ export default function Page({ params }: { params: { id: number | string } }) {
                             ))
                         }
 
-                            <div className="flex gap-x-3 mt-6 items-center">
-                                <Quantity />
+                            <div className="flex gap-x-3 mt-10 items-center">
+                                <span className="text-2xl font-bold">Quantity: </span>    <Quantity />
                             </div>
                         </div>
 

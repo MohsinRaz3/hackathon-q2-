@@ -1,4 +1,5 @@
 import { cartTable, db } from '@/lib/drizzle'
+//@ts-ignore
 import { eq } from 'drizzle-orm';
 import { cookies } from 'next//headers';
 import { NextRequest, NextResponse } from 'next/server'
@@ -30,6 +31,7 @@ export const POST = async (request: Request) => {
     const user_id = cookies().get("user_id")
 
     if (!user_id) {
+        // @ts-ignore
         setCookies.set("user_id", uid);
     }
 

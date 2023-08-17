@@ -6,6 +6,7 @@ import Hero from '@/components/views/Hero'
 import ProductList from '@/components/views/ProductList'
 import Promotions from '@/components/views/Promotions'
 import StripePayment from '@/components/views/StripePayment'
+import Footer from '@/components/views/Footer'
 
 interface IProduct {
   _id: string,
@@ -52,6 +53,8 @@ export default async function Home() {
 
         }</div>
 
+
+      <Footer />
 
     </section>
   )

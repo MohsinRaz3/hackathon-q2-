@@ -15,7 +15,7 @@ export const ProductCart: FC<{ item: any }> = ({ item }) => {
             })
         })
         const result = res.json()
-        console.log(result);
+        // console.log(result);
 
     }
 
