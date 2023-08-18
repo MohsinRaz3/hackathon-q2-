@@ -1,16 +1,29 @@
 import { ProductCards } from "@/components/ProductCards"
+import { FC } from "react"
 import React from 'react'
-import { Products } from "@/utils/mock"
+// import getProducts from "@/utils/mock"
+// import { IIProduct } from "@/utils/types"
 
 
-const ProductList = () => {
-    const slicedProd = Products.slice(0, 3)
+// export const getProd = async () => {
+//     const slicedProd: IIProduct = await getProducts()
+//     // return slicedProd;
+//     //  console.log(slicedProd);
+
+// }
+
+const ProductList: FC<{ item: any }> = ({ item }) => {
+    //console.log(item);
+
 
     return (
         <div className="flex flex-col md:flex-row justify-evenly mt-16">
-            {slicedProd.map((pro) => (
-                <ProductCards id={pro.id} key={pro.id} name={pro.name} price={pro.price} image={pro.image} />
-            ))}
+            <ProductCards {...item} />
+            {/* {item.map((pro: any) => (
+                <div key={pro._id}>
+                    <ProductCards pro={pro} />
+                </div>
+            ))} */}
         </div>
     )
 }

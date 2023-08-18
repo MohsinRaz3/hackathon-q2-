@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image"
+import { Image as IImage } from "sanity"
 
 export type IProduct = {
     id: number,
@@ -8,4 +9,16 @@ export type IProduct = {
     category: string,
     image: StaticImageData
 
+}
+
+
+export interface IIProduct {
+    _id: string,
+    title: string,
+    description: string,
+    price: string,
+    image: IImage,
+    category: {
+        name: string
+    }
 }
