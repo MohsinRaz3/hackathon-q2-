@@ -26,11 +26,11 @@ export default async function Home() {
 
 
       <div className="grid grid-cols-[repeat(3,auto)]  justify-center gap-x-10">
-        {data.map((item: any) => (
+        {data.map((item: IIProduct) => (
           <>
             <div key={item._id} className="flex flex-col items-center mt-10 m-5">
 
-              {/* <ProductList {...item} /> */}
+              <ProductList item={item} />
               {/* <ProductCart item={item} /> */}
             </div>
           </>

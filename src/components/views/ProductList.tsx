@@ -12,13 +12,13 @@ import React from 'react'
 
 // }
 
-const ProductList: FC<{ item: any }> = ({ item }) => {
-    //console.log(item);
+const ProductList = (item: any) => {
+    // console.log("items product list", item);
 
 
     return (
         <div className="flex flex-col md:flex-row justify-evenly mt-16">
-            <ProductCards {...item} />
+            <ProductCards productCardItem={item} />
             {/* {item.map((pro: any) => (
                 <div key={pro._id}>
                     <ProductCards pro={pro} />
