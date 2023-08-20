@@ -11,8 +11,7 @@ import { IIProduct } from '../utils/types'
 
 
 export default async function Home() {
-  const data = await getProducts()
-  //console.log(data);
+
 
   return (
 
@@ -21,23 +20,9 @@ export default async function Home() {
       <Hero />
       <Promotions />
       <StripePayment />
+      {/* @ts-ignore */}
+      <ProductList />
 
-
-
-
-      <div className="grid grid-cols-[repeat(3,auto)]  justify-center gap-x-10">
-        {data.map((item: IIProduct) => (
-          <>
-            <div key={item._id} className="flex flex-col items-center mt-10 m-5">
-
-              <ProductList item={item} />
-              {/* <ProductCart item={item} /> */}
-            </div>
-          </>
-
-        ))
-
-        }</div>
 
 
       <Footer />

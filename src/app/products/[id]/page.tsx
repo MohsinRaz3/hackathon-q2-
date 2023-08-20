@@ -8,18 +8,20 @@ import { urlForImage } from ".././../../../sanity/lib/image";
 
 
 const sizes = ["XS", "SM", "MD", "LG", "XL"]
-export default async function Page({ params }: { params: { id: number | string } }) {
 
+export default async function Page({ params }: { params: { id: number | string } }) {
 
     async function allProductsData() {
         const allData = await getProducts()
         return allData
     }
     const ddd = await allProductsData()
+    // console.log(ddd.category);
+
 
     async function getProductDetails(id: number | string) {
-        return ddd.find((prod: any) => (prod._id == id))
-
+        const res = ddd.find((prod: any) => (prod._id == id))
+        return res;
     }
     const result: IIProduct = await getProductDetails(params.id)
     console.log("resultss", result);

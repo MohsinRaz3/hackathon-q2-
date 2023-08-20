@@ -1,4 +1,5 @@
 import { ProductCards } from "@/components/ProductCards"
+import getProducts from "@/utils/mock"
 import { FC } from "react"
 import React from 'react'
 // import getProducts from "@/utils/mock"
@@ -12,13 +13,29 @@ import React from 'react'
 
 // }
 
-const ProductList = (item: any) => {
-    // console.log("items product list", item);
+async function ProductList() {
+    const data = await getProducts()
 
+    //console.log("items product lizzst", data);
 
     return (
+
+
         <div className="flex flex-col md:flex-row justify-evenly mt-16">
-            <ProductCards productCardItem={item} />
+
+            <div className="grid grid-cols-[repeat(3,auto)]  justify-center gap-x-10">
+                {data.map((item: any) => (
+                    <>
+                        <div key={item._id} className="flex flex-col items-center mt-10 m-5">
+
+                            <ProductCards item={item} />
+                            {/* <ProductCart item={item} /> */}
+                        </div>
+                    </>
+
+                ))
+
+                }</div>
             {/* {item.map((pro: any) => (
                 <div key={pro._id}>
                     <ProductCards pro={pro} />

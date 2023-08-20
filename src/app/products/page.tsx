@@ -1,14 +1,23 @@
 import React from 'react'
 import { ProductCards } from "@/components/ProductCards"
-import { Products } from "@/utils/mock"
+import getProducts from "@/utils/mock"
+import { urlForImage } from '../../../sanity/lib/image'
 
 
-const AllProducts = () => {
+
+
+const AllProducts = async () => {
+
+    async function allProductsData() {
+        const allData = await getProducts()
+        return allData
+    }
+    const ddd = await allProductsData()
     return (
         <div className="flex flex-col md:flex-row justify-evenly mt-16 flex-wrap">
-            {Products.map((pro) => (
+            {ddd.map((pro: any) => (
 
-                <ProductCards id={pro.id} key={pro.id} name={pro.name} price={pro.price} category={pro.category} image={pro.image} />
+                <ProductCards item={pro} />
 
             ))}
         </div>
