@@ -25,6 +25,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "react": [
+        "./node_modules/@types/react"
+      ],
       "@/*": [
         "./src/*"
       ]
@@ -34,7 +37,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
   ],
   "exclude": [
     "node_modules"

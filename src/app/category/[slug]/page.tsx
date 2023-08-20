@@ -1,20 +1,35 @@
-import { Products } from "@/utils/mock"
+import getProducts from "@/utils/mock";
 import { ProductCards } from "@/components/ProductCards"
 
+export default async function Page({ params }: { params: { slug: string } }) {
 
-const getProductByCategory = (category: string) => {
-    return Products.filter((pro) => pro.category === category)
-}
+    async function allProductsData() {
+        const allData = await getProducts()
+        return allData
+    }
 
-export default function Page({ params }: { params: { slug: string } }) {
+    const ddd = await allProductsData()
+    // console.log(ddd);
 
 
-    const result = getProductByCategory(params.slug)
+    const getProductByCategory = async (category: string) => {
+        // console.log(category);
+
+        const catData = await ddd.filter((pro: any) => pro.category.name == category)
+        //console.log(catData);
+
+        return catData;
+
+    }
+
+    const result = await getProductByCategory(params.slug)
+    // console.log(result);
+
     return (
         <>
             <div className="flex flex-col md:flex-row justify-evenly mt-16">
-                {result.length > 0 ? result.map((pro) => (
-                    <ProductCards id={pro.id} key={pro.id} name={pro.name} price={pro.price} category={pro.category} image={pro.image} />
+                {result.length > 0 ? result.map((pro: any) => (
+                    <ProductCards item={pro} />
                 )) : (<div> No Product Found</div>)
                 }
             </div >

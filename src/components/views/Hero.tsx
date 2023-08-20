@@ -5,7 +5,7 @@ import Image from 'next/image'
 import heroImg from "/public/heroimg.webp"
 import React from 'react'
 import { featureImg } from '@/utils/mock'
-
+import getProducts from "@/utils/mock"
 
 
 const Hero = () => {
@@ -26,7 +26,7 @@ const Hero = () => {
 
                 <div className='flex gap-x-8 mt-6  '>
                     {
-                        featureImg.map((img) => (<Image key={img} src={img} alt="featured" height={80} width={130} />))
+                        featureImg.map((img: any) => (<Image key={img} src={img} alt="featured" height={80} width={130} />))
                     }
                 </div>
 

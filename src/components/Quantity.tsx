@@ -10,7 +10,7 @@ const Quantity = () => {
                 -
             </button>
             <span>{items}</span>
-            <button onClick={() => { setItems(items + 1) }} className=' h-5 w-5 border rounded-full flex justify-center items-center'>+</button>
+            <button onClick={() => { setItems(items + 1) }} className=' h-5 w-5 border border-ring ring-offset-2  ring-offset-black border-black rounded-full flex justify-center items-center'>+</button>
         </div>
     )
 }

@@ -1,30 +1,42 @@
 
-import { Products } from "@/utils/mock"
+import getProducts from "@/utils/mock";
 import Image from "next/image";
 import { ProductCards } from "@/components/ProductCards";
 import Quantity from "@/components/Quantity";
+import { IIProduct } from "@/utils/types";
+import { urlForImage } from ".././../../../sanity/lib/image";
 
-function getProductDetails(id: number | string) {
 
-    return Products.filter((prod) => (prod.id == id))
-
-}
 const sizes = ["XS", "SM", "MD", "LG", "XL"]
-export default function Page({ params }: { params: { id: number | string } }) {
-    const result = getProductDetails(params.id)
-    // console.log(result);
+
+export default async function Page({ params }: { params: { id: number | string } }) {
+
+    async function allProductsData() {
+        const allData = await getProducts()
+        return allData
+    }
+    const ddd = await allProductsData()
+    // console.log(ddd.category);
+
+
+    async function getProductDetails(id: number | string) {
+        const res = ddd.find((prod: any) => (prod._id == id))
+        return res;
+    }
+    const result: IIProduct = await getProductDetails(params.id)
+    console.log("resultss", result);
 
     return (
-        <div className=" flex flex-wrap py-10 mt-16"> {
-            result.map((res) => (
-                <div key={res.id} className="flex justify-between gap-6">
+        <div className=" flex flex-wrap py-10 mt-16">
+            <div>
+                <div key={result._id} className="flex justify-between gap-6">
 
-                    <div><Image src={res.image} alt="product" /></div>
+                    <div><Image src={urlForImage(result.image).url()} alt="product" width={300} height={200} /></div>
                     {/* Right div */}
                     <div>
                         <div>
-                            <h1 className="text-2xl font-bold"> {res.name}</h1>
-                            <h2 className="text-base text-gray-400 font-semibold">{res.tagline}</h2>
+                            <h1 className="text-2xl font-bold"> {result.title}</h1>
+                            <h2 className="text-base text-gray-400 font-semibold"></h2>
                         </div>
 
 
@@ -40,8 +52,8 @@ export default function Page({ params }: { params: { id: number | string } }) {
                             ))
                         }
 
-                            <div className="flex gap-x-3 mt-6 items-center">
-                                <Quantity />
+                            <div className="flex gap-x-3 mt-10 items-center">
+                                <span className="text-2xl font-bold">Quantity: </span>    <Quantity />
                             </div>
                         </div>
 
@@ -49,9 +61,12 @@ export default function Page({ params }: { params: { id: number | string } }) {
 
 
 
+
                 </div>
-            ))
-        }</div>
+            </div>
+
+        </div>
+
     )
 
 }

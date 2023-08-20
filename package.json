@@ -35,12 +35,12 @@
     "sanity": "^3.11.5",
     "stripe": "^12.14.0",
     "tailwind-merge": "^1.13.2",
-    "tailwindcss-animate": "^1.0.6",
-    "typescript": "5.1.3"
+    "tailwindcss-animate": "^1.0.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.1.6"
   }
 }
