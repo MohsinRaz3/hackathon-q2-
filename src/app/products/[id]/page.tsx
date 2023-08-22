@@ -5,6 +5,7 @@ import { ProductCards } from "@/components/ProductCards";
 import Quantity from "@/components/Quantity";
 import { IIProduct } from "@/utils/types";
 import { urlForImage } from ".././../../../sanity/lib/image";
+import AddToCart from "@/components/AddToCart";
 
 
 const sizes = ["XS", "SM", "MD", "LG", "XL"]
@@ -24,7 +25,7 @@ export default async function Page({ params }: { params: { id: number | string }
         return res;
     }
     const result: IIProduct = await getProductDetails(params.id)
-    console.log("resultss", result);
+    //console.log("resultss", result);
 
     return (
         <div className=" flex flex-wrap py-10 mt-16">
@@ -45,26 +46,27 @@ export default async function Page({ params }: { params: { id: number | string }
                         </div>
                         <div className="flex gap-x-3">                       {
                             sizes.map((item, i) => (
-                                <div key={i} className="w-6 h-6 rounded-full mt-2 duration-300 hover:shadow-2xl border flex justify-center items-center">
-                                    <span className="text-[10px] font-semibold text-center text-gray-600"> {item}</span>
+                                <div key={i} className="w-6 h-6 rounded-full mt-2 duration-300 hover:shadow-2xl border active:bg-red-800 flex justify-center items-center">
+                                    <span className="text-[10px] font-semibold text-center text-gray-600 hover:cursor-pointer "> {item}</span>
                                 </div>
 
                             ))
                         }
 
                             <div className="flex gap-x-3 mt-10 items-center">
-                                <span className="text-2xl font-bold">Quantity: </span>    <Quantity />
+                                <Quantity price={result.price} />
                             </div>
-                        </div>
 
+                        </div>
+                        <AddToCart />
                     </div>
 
 
 
 
                 </div>
-            </div>
 
+            </div>
         </div>
 
     )
