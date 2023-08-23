@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 
-const Quantity = ({ price }: { price: any }) => {
+const Quantity = ({ price }: { price: number }) => {
 
     const [items, setItems] = useState(1);
 

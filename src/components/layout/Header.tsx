@@ -27,9 +27,9 @@ export const Header = () => {
                     <Link className='text-lg' href={"category/Kids"}> <li>Kids</li></Link>
                     <Link className='text-lg' href={"products"}><li>All products</li></Link>
                 </ul>
-                <p className='relative h-15 w-15 md:flex md:items-center md:justify-center rounded-full hidden '>
+                <Link href={"cart"} className='relative h-15 w-15 md:flex md:items-center md:justify-center rounded-full hidden '>
                     <span className='absolute right-1 top-0 rounded-full bg-red-500 h-5 w-5 text-white text-center text-sx'>{cartValue}</span><ShoppingCart />
-                </p>
+                </Link>
 
                 <div className='md:hidden'>
                     <Sheet>
@@ -42,9 +42,9 @@ export const Header = () => {
                                     <Link className='text-lg' href={"category/Kids"}> <li>Kids</li></Link>
                                     <Link className='text-lg' href={"products"}><li>All products</li></Link>
                                 </ul>
-                                <p className='relative h-15 w-15 md:flex md:items-center md:justify-center rounded-full hidden '>
+                                <Link href={"cart"} className='relative h-15 w-15 md:flex md:items-center md:justify-center rounded-full hidden '>
                                     <span className='absolute right-1 top-0 rounded-full bg-red-500 h-5 w-5 text-white text-center text-sx'>{cartValue}</span><ShoppingCart />
-                                </p>
+                                </Link>
                             </div>
                         </SheetContent>
                     </Sheet>
