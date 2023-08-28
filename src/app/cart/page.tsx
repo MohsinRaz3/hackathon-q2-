@@ -17,7 +17,7 @@ export default async function CartItems() {
                     <h2 className='text-3xl font-extrabold'> Shopping Cart</h2>
                     <div className='flex flex-col gap-14 '>
                         {data.map((item: any) => (
-                            <div className='flex gap-3'>
+                            <div key={item.user_id} className='flex gap-3'>
                                 <img src={item.image_url} className='gap-x-3 w-40 h-40' alt="products" width={300} height={300} />
                                 <div className='flex flex-col gap-x-3'>
 
