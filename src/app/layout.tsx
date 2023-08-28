@@ -1,7 +1,7 @@
 import { Header } from "../components/layout/Header"
 import { Inter } from 'next/font/google'
 import Providers from '../components/Provider'
-
+import { ClerkProvider } from "@clerk/nextjs"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,17 +16,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Providers>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <Providers>
 
-          <Header />
+            <Header />
+            <main className="px-8">
+              {children}
+            </main>
 
-          <main className="px-8"> {children}</main>
-
-        </Providers>
-
-      </body>
-    </html>
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

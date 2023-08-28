@@ -1,5 +1,5 @@
 'use client'
-import { store } from "@/store/store";
+import { store } from '../store/store'
 import { Toaster } from "react-hot-toast";
 import { Provider } from "react-redux";
 

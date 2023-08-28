@@ -29,7 +29,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <>
             <div className="flex flex-col md:flex-row justify-evenly mt-16">
                 {result.length > 0 ? result.map((pro: any) => (
-                    <ProductCards item={pro} />
+                    <ProductCards key={pro._id} item={pro} />
                 )) : (<div> No Product Found</div>)
                 }
             </div >

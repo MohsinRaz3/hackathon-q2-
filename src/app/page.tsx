@@ -9,7 +9,6 @@ import Footer from '@/components/views/Footer'
 
 
 
-
 export default async function Home() {
 
 
@@ -22,9 +21,6 @@ export default async function Home() {
       <StripePayment />
       {/* @ts-ignore */}
       <ProductList />
-
-
-
       <Footer />
 
     </section>

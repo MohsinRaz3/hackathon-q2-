@@ -1,10 +1,7 @@
 import React from 'react'
 import { ProductCards } from "@/components/ProductCards"
 import getProducts from "@/utils/mock"
-import { urlForImage } from '../../../sanity/lib/image'
-
-
-
+import AddToCart from '@/components/AddToCart'
 
 const AllProducts = async () => {
 
@@ -16,10 +13,13 @@ const AllProducts = async () => {
     return (
         <div className="flex flex-col md:flex-row justify-evenly mt-16 flex-wrap">
             {ddd.map((pro: any) => (
-
-                <ProductCards item={pro} />
+                <div key={pro._id} className='flex flex-col gap-5 flex-wrap sm:my-6'>
+                    <ProductCards item={pro} />
+                    <AddToCart item={pro} />
+                </div>
 
             ))}
+
         </div>
     )
 }

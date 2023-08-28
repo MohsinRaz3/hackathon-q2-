@@ -16,6 +16,7 @@
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "incremental": true,
     "plugins": [
@@ -25,9 +26,6 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "react": [
-        "./node_modules/@types/react"
-      ],
       "@/*": [
         "./src/*"
       ]
@@ -38,6 +36,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    "pages/**/*",
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"

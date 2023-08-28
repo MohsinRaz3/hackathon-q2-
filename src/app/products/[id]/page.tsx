@@ -1,8 +1,6 @@
 
 import getProducts from "@/utils/mock";
 import Image from "next/image";
-import { ProductCards } from "@/components/ProductCards";
-import Quantity from "@/components/Quantity";
 import { IIProduct } from "@/utils/types";
 import { urlForImage } from ".././../../../sanity/lib/image";
 import AddToCart from "@/components/AddToCart";
@@ -25,7 +23,7 @@ export default async function Page({ params }: { params: { id: number | string }
         return res;
     }
     const result: IIProduct = await getProductDetails(params.id)
-    //console.log("resultss", result);
+    // console.log("resultss", typeof (result.price));
 
     return (
         <div className=" flex flex-wrap py-10 mt-16">
@@ -37,7 +35,7 @@ export default async function Page({ params }: { params: { id: number | string }
                     <div>
                         <div>
                             <h1 className="text-2xl font-bold"> {result.title}</h1>
-                            <h2 className="text-base text-gray-400 font-semibold"></h2>
+                            <h2 className="text-base text-gray-400 font-semibold">{result.category.name}</h2>
                         </div>
 
 
@@ -53,12 +51,9 @@ export default async function Page({ params }: { params: { id: number | string }
                             ))
                         }
 
-                            <div className="flex gap-x-3 mt-10 items-center">
-                                <Quantity price={result.price} />
-                            </div>
 
                         </div>
-                        <AddToCart />
+                        <AddToCart item={result} />
                     </div>
 
 

@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
 import Link from "next/link"
-import AddToCart from './AddToCart'
 import { urlForImage } from '../../sanity/lib/image'
 import { IIProduct } from '@/utils/types'
 
@@ -25,7 +24,6 @@ export const ProductCards = (pro: any) => {
                         <h3 className='font-medium text-sm mt-3'>{data?.category?.name}</h3>
                     </div>
                 </Link>
-                <AddToCart />
             </div>
         </div>
     )
